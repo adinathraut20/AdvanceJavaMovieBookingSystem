@@ -1,0 +1,5 @@
+package com.bookmovie.dto;
+
+public class Movie {
+
+}

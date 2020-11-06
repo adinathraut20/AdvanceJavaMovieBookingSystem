@@ -1,0 +1,137 @@
+package com.bookmovie.dto;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Show")
+public class Show {
+
+	@Id
+	@GeneratedValue
+	@Column(name = "show_id")
+	private int showId;
+	@Column(name = "movie_id")
+	private int movieId;
+	@Column(name = "hall_id")
+	private int hallId;
+	@Column(name = "show_date")
+	private String showDate;
+	@Column(name = "show_time")
+	private String showTime;
+	@Column(name = "duration")
+	private String duration;
+	@Column(name = "price")
+	private float price;
+	@Column(name = "total_seats")
+	private int totalSeats;
+	@Column(name = "booked_seats")
+	private int bookedSeats;
+	
+	public Show() {
+		super();
+	}
+
+	public Show(int showId) {
+		super();
+		this.showId = showId;
+	}
+
+	public Show(int showId, int movieId, int hallno, String showDate, String showTime, String duration, float price,
+			int totalSeats, int bookedSeats) {
+		super();
+		this.showId = showId;
+		this.movieId = movieId;
+		this.hallId = hallno;
+		this.showDate = showDate;
+		this.showTime = showTime;
+		this.duration = duration;
+		this.price = price;
+		this.totalSeats = totalSeats;
+		this.bookedSeats = bookedSeats;
+	}
+
+	public int getShowId() {
+		return showId;
+	}
+
+	public void setShowId(int showId) {
+		this.showId = showId;
+	}
+
+	public int getMovieId() {
+		return movieId;
+	}
+
+	public void setMovieId(int movieId) {
+		this.movieId = movieId;
+	}
+
+	public int getHallno() {
+		return hallId;
+	}
+
+	public void setHallno(int hallno) {
+		this.hallId = hallno;
+	}
+
+	public String getShowDate() {
+		return showDate;
+	}
+
+	public void setShowDate(String showDate) {
+		this.showDate = showDate;
+	}
+
+	public String getShowTime() {
+		return showTime;
+	}
+
+	public void setShowTime(String showTime) {
+		this.showTime = showTime;
+	}
+
+	public String getDuration() {
+		return duration;
+	}
+
+	public void setDuration(String duration) {
+		this.duration = duration;
+	}
+
+	public float getPrice() {
+		return price;
+	}
+
+	public void setPrice(float price) {
+		this.price = price;
+	}
+
+	public int getTotalSeats() {
+		return totalSeats;
+	}
+
+	public void setTotalSeats(int totalSeats) {
+		this.totalSeats = totalSeats;
+	}
+
+	public int getBookedSeats() {
+		return bookedSeats;
+	}
+
+	public void setBookedSeats(int bookedSeats) {
+		this.bookedSeats = bookedSeats;
+	}
+
+	@Override
+	public String toString() {
+		return "Show [showId=" + showId + ", movieId=" + movieId + ", hallno=" + hallId + ", showDate=" + showDate
+				+ ", showTime=" + showTime + ", duration=" + duration + ", price=" + price + ", totalSeats="
+				+ totalSeats + ", bookedSeats=" + bookedSeats + "]";
+	}
+
+	
+}

@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    
+    <% 
+       //System.out.println("hi shows_page ");
+      if(session.getAttribute("admin") == null){
+    	 session.setAttribute("err_mssg", "Please Login Again...");
+    	 response.sendRedirect("prep_admin_log.htm");
+    	 
+      }
+	
+      %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

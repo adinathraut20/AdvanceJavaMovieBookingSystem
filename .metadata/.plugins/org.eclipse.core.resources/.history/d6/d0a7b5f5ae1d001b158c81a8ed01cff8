@@ -1,0 +1,15 @@
+package com.bookmovie.dao;
+
+import java.util.List;
+
+import com.bookmovie.dto.Movie;
+import com.bookmovie.dto.Show;
+import com.bookmovie.dto.User;
+
+public interface UserDao {
+
+	void addUser(User user);
+	User getUser(User user);
+	List<Movie> getMovies();
+	List<Show> getShow(int movieId);
+}

@@ -1,0 +1,31 @@
+package com.bookmovie.valid;
+
+import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
+import org.springframework.validation.Validator;
+
+import com.bookmovie.dto.User;
+
+public class UserValidator implements Validator {
+
+	@Override
+	public boolean supports(Class<?> clazz) {
+		return clazz.equals(User.class);
+	}
+
+	@Override
+	public Errors validate(Object target, Errors errors) {
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "userName","unmKey", "user name required");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "userPass", "passKey","password required");
+		
+		User user = (User)target;
+		if(user.getEmail()!=null) {
+			if(user.getPassword().length()<8) { 
+				errors.rejectValue("userPass", "passKey", "password should contains atleast 8 chars");
+			}
+		}
+		
+	}
+
+	
+}

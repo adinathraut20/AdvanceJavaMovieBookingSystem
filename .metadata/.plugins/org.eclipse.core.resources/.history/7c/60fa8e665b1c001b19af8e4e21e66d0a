@@ -1,0 +1,44 @@
+package com.bookmovie.dao;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate4.HibernateCallback;
+import org.springframework.orm.hibernate4.HibernateTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.bookmovie.dto.User;
+
+@Repository
+public class UserDaoImple implements UserDao {
+
+	@Autowired
+	HibernateTemplate hibetnateTemplate;
+	@Override
+	public void addUser(User user) {
+		hibetnateTemplate.execute(new HibernateCallback<Void>() {
+
+			@Override
+			public Void doInHibernate(Session session) throws HibernateException {
+				
+				Transaction trans = session.beginTransaction();
+				session.save(user);
+				trans.commit();
+				session.flush();
+				session.close();
+				
+				return null;
+				
+			}
+		});
+
+	}
+
+	@Override
+	public User getUser(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

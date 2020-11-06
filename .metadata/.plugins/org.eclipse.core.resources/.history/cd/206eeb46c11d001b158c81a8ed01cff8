@@ -1,0 +1,111 @@
+package com.bookmovie.dao;
+
+import java.util.List;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate4.HibernateCallback;
+import org.springframework.orm.hibernate4.HibernateTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.bookmovie.dto.Movie;
+import com.bookmovie.dto.Show;
+import com.bookmovie.dto.Shows;
+import com.bookmovie.dto.User;
+
+@Repository
+public class UserDaoImple implements UserDao {
+
+	@Autowired
+	HibernateTemplate hibetnateTemplate;
+	@Override
+	public boolean addUser(User user) {
+		return hibetnateTemplate.execute(new HibernateCallback<Boolean>() {
+
+			@Override
+			public Boolean doInHibernate(Session session) throws HibernateException {
+				
+				Transaction trans = session.beginTransaction();
+				Query q = session.createQuery("from User where email = ?");
+				q.setString(0, user.getEmail());
+				List<User> li = q.list();
+				if(!li.isEmpty()) {
+					return false;
+				}
+				session.save(user);
+				trans.commit();
+				session.flush();
+				session.close();
+				
+				return true;
+				
+			}
+		});
+
+	}
+
+	@Override
+	public User getUser(User user) {
+
+		User usr = hibetnateTemplate.execute(new HibernateCallback<User>() {
+
+			@Override
+			public User doInHibernate(Session session) throws HibernateException {
+				
+				Transaction trans = session.beginTransaction();
+				Query q = session.createQuery("from User where email = ? and password = ?");
+				q.setString(0, user.getEmail());
+				q.setString(1, user.getPassword());
+				List<User> li = q.list();
+				if(li.isEmpty()) {
+					return null;
+				}
+				else {
+					return li.get(0);
+				}
+			}
+		});
+		
+		return usr;
+	}
+
+	@Override
+	public List<Movie> getMovies() {
+		
+		List<Movie> li = hibetnateTemplate.execute(new HibernateCallback<List<Movie>>() {
+
+			@Override
+			public List<Movie> doInHibernate(Session session) throws HibernateException {
+				Transaction trans = session.beginTransaction();
+				Query q = session.createQuery("from Movie");
+				List<Movie> l1 = q.list();
+				if(!l1.isEmpty()) {
+					return l1;
+				}
+				return null;
+			}} );
+		return li;
+	}
+
+	@Override
+	public List<Shows> getShow(int movieId) {
+		
+		return hibetnateTemplate.execute(new HibernateCallback<List<Shows>>() {
+
+			@Override
+			public List<Shows> doInHibernate(Session session) throws HibernateException {
+				Transaction trans = session.beginTransaction();
+				Query q = session.createQuery("from Shows where movie_id = ?");
+				q.setInteger(0, movieId);
+				List<Shows> l1 = q.list();
+				if(!l1.isEmpty()) {
+					return l1;
+				}
+				return null;
+			}} );
+	}
+
+}

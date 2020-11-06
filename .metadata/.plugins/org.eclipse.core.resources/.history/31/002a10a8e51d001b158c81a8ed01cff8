@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+<meta charset="utf-8"/>
+<title>ERROR Page Not Found</title>
+<div class="sw"><a href="prep_log_form.htm"><img src="error.png" ></a></div>
+<style>
+.sw img{
+width : 50%;
+height : auto;
+ position : absolute;
+ left : 30%;
+ top : 50px;
+ border-radius : 15px;
+ }
+</head>

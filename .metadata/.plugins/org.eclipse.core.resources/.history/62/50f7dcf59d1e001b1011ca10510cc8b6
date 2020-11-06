@@ -1,0 +1,8 @@
+html,body {
+	height: 100%;
+ 	background-repeat: no-repeat;
+ 	background:url("home.jpg");
+ 	font-family: 'Oxygen', sans-serif;
+	background-size: contain;
+   }
+  

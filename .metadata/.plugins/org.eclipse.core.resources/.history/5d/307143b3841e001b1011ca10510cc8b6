@@ -1,0 +1,105 @@
+package com.bookmovie.dto;
+
+import java.sql.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Orders")
+public class Orders {
+	
+	@Id
+	@Column(name = "ticket_id")
+	private int ticketId;
+	@ManyToOne
+	@JoinColumn(name = "show_id")
+	private Shows shows;
+	@Column(name = "user_id")
+	private int userId;
+	@Column(name = "order_date")
+	private Date orderDate;
+	@Column(name = "price")
+	private float price;
+	@Column( name = "seat_no")
+	private int seatNo;
+	
+	public Orders() {}
+
+	public Orders(int ticketId) {
+		this.ticketId = ticketId;
+	}
+
+	public Orders(int ticketId, Shows shows, int userId, Date orderDate, float price, int seatNo) {
+		super();
+		this.ticketId = ticketId;
+		this.shows = shows;
+		this.userId = userId;
+		this.orderDate = orderDate;
+		this.price = price;
+		this.seatNo = seatNo;
+	}
+
+	public int getTicketId() {
+		return ticketId;
+	}
+
+	public void setTicketId(int ticketId) {
+		this.ticketId = ticketId;
+	}
+
+	public Shows getShows() {
+		return shows;
+	}
+
+	public void setShows(Shows shows) {
+		this.shows = shows;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	public Date getOrderDate() {
+		return orderDate;
+	}
+
+	public void setOrderDate(Date orderDate) {
+		this.orderDate = orderDate;
+	}
+
+	public float getPrice() {
+		return price;
+	}
+
+	public void setPrice(float price) {
+		this.price = price;
+	}
+
+	public int getSeatNo() {
+		return seatNo;
+	}
+
+	public void setSeatNo(int seatNo) {
+		this.seatNo = seatNo;
+	}
+
+	@Override
+	public String toString() {
+		return "Orders [ticketId=" + ticketId + ", shows=" + shows + ", userId=" + userId + ", orderDate=" + orderDate
+				+ ", price=" + price + ", seatNo=" + seatNo + "]";
+	}
+
+	
+	
+	
+	
+}

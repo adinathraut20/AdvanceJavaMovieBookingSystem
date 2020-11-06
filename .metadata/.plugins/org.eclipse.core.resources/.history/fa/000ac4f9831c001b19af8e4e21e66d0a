@@ -1,0 +1,21 @@
+package com.bookmovie.dto;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Movie")
+public class Movie {
+	
+	@Id
+	@Column(name = "mid")
+	private int mid;
+	@Column(name = "m_name")
+	private String mName;
+	@Column( name = "release_date")
+	private String releaseDate;
+	
+	
+}

@@ -1,0 +1,19 @@
+package com.bookmovie.service;
+
+import com.bookmovie.dto.User;
+
+public class UserServiceImple implements UserService {
+
+	@Override
+	public void insertUser(User user) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public User getUser(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

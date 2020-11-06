@@ -1,0 +1,51 @@
+package com.bookmovie.dto;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Show")
+public class Show {
+
+	@Id
+	@GeneratedValue
+	@Column(name = "show_id")
+	private int showId;
+	@ManyToOne
+	@JoinColumn(name = "movie_id")
+	@Column(name = "movie_id")
+	private Movie movie;
+	@ManyToOne
+	@JoinColumn(name = "hall_id")
+	@Column(name = "hall_id")
+	private int hallId;
+	@Column(name = "show_date")
+	private String showDate;
+	@Column(name = "show_time")
+	private String showTime;
+	@Column(name = "duration")
+	private String duration;
+	@Column(name = "price")
+	private float price;
+	@Column(name = "total_seats")
+	private int totalSeats;
+	@Column(name = "booked_seats")
+	private int bookedSeats;
+	
+	public Show() {
+		super();
+	}
+
+	public Show(int showId) {
+		super();
+		this.showId = showId;
+	}
+
+	
+	
+}

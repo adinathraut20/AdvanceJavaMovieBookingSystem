@@ -1,0 +1,88 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+
+<html>
+    <head>
+       <title>Book Movies</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+     
+     <link rel="stylesheet" type="text/css" href="home.css">
+     
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/0ff6456f25.js"
+      crossorigin="anonymous"
+    />
+     <style>
+	html,body {
+	height: 100%;
+ 	background-repeat: no-repeat;
+ 	background:url("home.jpg");
+ 	font-family: 'Oxygen', sans-serif;
+	background-size: inherit;
+    padding:0;
+    margin:0;
+    height:100%;
+    min-height:100%;
+   }
+  
+  .quarter{
+    width:50%;
+    height:100%;
+    float:left;
+  }
+  .contents{
+    height:50%;
+    width:100%;
+  }
+	 
+	 
+	 </style>  
+    </head>
+
+    
+    <body>
+    
+    	<nav class="navbar navbar-expand fixed-top text-light navbar-dark bg-dark justify-content-between"  >
+      <div class="nav navbar-nav">
+        <!--<a class="nav-item nav-link active" href="#">
+          <i class="fa fa-home" aria-hidden="true"></i> Home</a
+        >-->
+      </div>
+      <div class="nav navbar-nav" style="font-family: cursive; font-size: 25px">
+        <font color="white"> &#127909;</font>&nbspBOOK MY TICKET 
+      </div>
+      <div class="nav navbar-nav">
+         <a class="nav-item nav-link active" href="prep_admin_logout.htm"><button class="btn btn-danger">Logout</button></a>
+      </div>
+    </nav>
+    
+        <div class="contents">
+            <div class="col-md-6 quarter d-flex justify-content-center align-items-center" style="background-color: rgba(26, 26, 26, 0.8); height: 50vh;"><a href="prep_admin_shows.htm" class="btn btn-warning " role="button" aria-pressed="true"><b><font color="black"> &#x2634;</font>&nbspSHOWS</b></a></div>
+            <div class="col-md-6 quarter d-flex justify-content-center align-items-center" style="background-color:rgb(255, 255, 255, 0.8); height: 50vh;"><a href="/aisha" class="btn btn-warning" role="button" aria-pressed="true"><b><font color="black"> &#x2139;</font>&nbspORDERS</b></a></div>
+            <div class="col-md-6 quarter d-flex justify-content-center align-items-center" style="background-color:rgb(255, 255, 255, 0.8); height: 50vh;"><a href="/aish" class="btn btn-warning" role="button" aria-pressed="true"><b><font color="black"> &#127909;</font>&nbspMOVIES</b></a></div>
+            <div class="col-md-6 quarter d-flex justify-content-center align-items-center" style="background: rgba(26, 26, 26, 0.8); height: 50vh;"><a href="/ash" class="btn btn-warning" role="button" aria-pressed="true"><b><font color="black"> &#x2638;</font>&nbspHALLS</b></a></div>   
+        </div>
+    </body>
+</html>

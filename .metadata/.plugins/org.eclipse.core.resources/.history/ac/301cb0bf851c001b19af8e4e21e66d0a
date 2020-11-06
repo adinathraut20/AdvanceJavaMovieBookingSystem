@@ -1,0 +1,9 @@
+package com.bookmovie.service;
+
+import com.bookmovie.dto.User;
+
+public interface UserService {
+
+	void insertUser(User user);
+	User getUser(User user);
+}

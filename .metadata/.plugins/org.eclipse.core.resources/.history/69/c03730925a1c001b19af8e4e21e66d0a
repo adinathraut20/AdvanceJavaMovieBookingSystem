@@ -1,0 +1,19 @@
+package com.bookmovie.dao;
+
+import com.bookmovie.dto.User;
+
+public class UserDaoImple implements UserDao {
+
+	@Override
+	public void addUser(User user) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public User getUser(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

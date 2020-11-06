@@ -1,0 +1,31 @@
+package com.bookmovie.dto;
+
+public class MovieShow {
+
+	package com.bookmovie.dto;
+
+	import javax.persistence.Column;
+	import javax.persistence.Entity;
+	import javax.persistence.GeneratedValue;
+	import javax.persistence.Id;
+	import javax.persistence.Table;
+
+	@Entity
+	@Table(name="Table")
+	public class Ticket {
+
+		@Id
+		@GeneratedValue
+		@Column(name = "show_id")
+		private int showId;
+		@Column(name = "admin_id")
+		private int adminId;
+		@Column(name = "hall_no")
+		private int hallno;
+		@Column(name = "seat_no")
+		private int seatNo;
+		@Column(name = "show_date")
+		
+	}
+
+}

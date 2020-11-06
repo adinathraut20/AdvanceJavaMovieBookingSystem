@@ -1,0 +1,20 @@
+package com.bookmovie.dto;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Hall")
+public class Hall {
+
+	@Id
+	@Column(name = "hall_id")
+	private int hallId;
+	@Column(name = "hall_name")
+	private String hallName;
+	@Column( name = "capacity")
+	private int capacity;
+	
+}

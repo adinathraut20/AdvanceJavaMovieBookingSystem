@@ -1,0 +1,135 @@
+package com.bookmovie.dto;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Orders")
+public class Orders {
+	
+	@Id
+	@Column(name = "ticket_id")
+	private int ticketId;
+	@Column(name = "movie_name")
+	private String movieName;
+	@Column(name = "hall_id")
+	private int hallId;
+	@Column(name = "user_id")
+	private int userId;
+	@Column(name = "show_date")
+	private String showDate;
+	@Column(name = "show_time")
+	private String showTime;
+	@Column(name = "duration")
+	private String duration;
+	@Column(name = "price")
+	private float price;
+	@Column( name = "seat_no")
+	private int seatNo;
+	
+	public Orders() {}
+
+	public Orders(int ticketId) {
+		this.ticketId = ticketId;
+	}
+
+	public Orders(int ticketId, String movieName, int hallId, int userId, String showDate, String showTime,
+			String duration, float price, int seatNo) {
+		super();
+		this.ticketId = ticketId;
+		this.movieName = movieName;
+		this.hallId = hallId;
+		this.userId = userId;
+		this.showDate = showDate;
+		this.showTime = showTime;
+		this.duration = duration;
+		this.price = price;
+		this.seatNo = seatNo;
+	}
+
+	public int getTicketId() {
+		return ticketId;
+	}
+
+	public void setTicketId(int ticketId) {
+		this.ticketId = ticketId;
+	}
+
+	public String getMovieName() {
+		return movieName;
+	}
+
+	public void setMovieName(String movieName) {
+		this.movieName = movieName;
+	}
+
+	public int getHallId() {
+		return hallId;
+	}
+
+	public void setHallId(int hallId) {
+		this.hallId = hallId;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	public String getShowDate() {
+		return showDate;
+	}
+
+	public void setShowDate(String showDate) {
+		this.showDate = showDate;
+	}
+
+	public String getShowTime() {
+		return showTime;
+	}
+
+	public void setShowTime(String showTime) {
+		this.showTime = showTime;
+	}
+
+	public String getDuration() {
+		return duration;
+	}
+
+	public void setDuration(String duration) {
+		this.duration = duration;
+	}
+
+	public float getPrice() {
+		return price;
+	}
+
+	public void setPrice(float price) {
+		this.price = price;
+	}
+
+	public int getSeatNo() {
+		return seatNo;
+	}
+
+	public void setSeatNo(int seatNo) {
+		this.seatNo = seatNo;
+	}
+
+	@Override
+	public String toString() {
+		return "Order [ticketId=" + ticketId + ", movieName=" + movieName + ", hallId=" + hallId + ", userId=" + userId
+				+ ", showDate=" + showDate + ", showTime=" + showTime + ", duration=" + duration + ", price=" + price
+				+ ", seatNo=" + seatNo + "]";
+	}
+	
+	
+	
+	
+	
+}

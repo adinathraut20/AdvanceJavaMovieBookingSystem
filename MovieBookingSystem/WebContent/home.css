@@ -1,0 +1,63 @@
+
+@import url('https://fonts.googleapis.com/css?family=Numans');
+body, html{
+     height: 100%;
+ 	background-repeat: no-repeat;
+ 	background:url("home.jpg");
+ 	font-family: 'Oxygen', sans-serif;
+	background-size: cover;
+}
+
+.main{
+ 	margin:50px 15px;
+}
+
+h1.title { 
+	font-size: 50px;
+	font-family: 'Passion One', cursive; 
+	font-weight: 400; 
+}
+
+hr{
+	width: 10%;
+	color: #fff;
+}
+
+
+label{
+	margin-bottom: 15px;
+}
+
+
+#button {
+    border: 1px solid #ccc;
+    margin-top: 28px;
+    padding: 6px 12px;
+    color: black;
+    
+   
+}
+.main-center{
+ 	margin-top: 30px;
+ 	margin: 0 auto;
+ 	max-width: 400px;
+    padding: 10px 40px;
+	background-color: rgba(0,0,0,0.5) !important;
+	color: #FFF;
+    text-shadow: none;
+	
+
+}
+span.input-group-addon i {
+    color: black;
+    font-size: 20px;
+}
+
+.login-button{
+	margin-top: 5px;
+}
+
+.login-register{
+	font-size: 11px;
+	text-align: center;
+}

@@ -1,0 +1,26 @@
+package com.bookmovie.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.bookmovie.dao.UserDao;
+import com.bookmovie.dto.User;
+
+@Service
+public class UserServiceImple implements UserService {
+
+	@Autowired
+	private UserDao userDao;
+	
+	@Override
+	public void insertUser(User user) {
+		userDao.addUser(user);
+
+	}
+
+	@Override
+	public User getUser(User user) {
+		return userDao.getUser(user);
+	}
+
+}
